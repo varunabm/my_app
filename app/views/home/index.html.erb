@@ -3,5 +3,14 @@
 
 
 <ul>
-    <li></li>
+    <%- for article in @articles do %> 
+    <li>
+        <strong><%= article.title %></strong></strong>
+        <p><%= article.description %></p>
+        <small>
+        Oleh <%= article.user.full_name %>
+        pada <%= article.created_at.to_s(:short) %>
+        </small>
+    </li>
+    <%- end %> 
 </ul>
